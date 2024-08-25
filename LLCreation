@@ -1,0 +1,38 @@
+// Create a single linked list of elements 5 10, 25, 30
+#include <stdio.h>
+#include <malloc.h>
+
+struct node 
+{
+    int data;
+    struct node * next;
+};
+
+void main()
+{
+    struct node *p, *q, *r, *s;
+
+    p = (struct node *)malloc(sizeof(struct node));
+    p -> data=5;
+    
+    q = (struct node *)malloc(sizeof(struct node));
+    q -> data=10;
+
+    r = (struct node *)malloc(sizeof(struct node));
+    r -> data=25;
+
+    s = (struct node *)malloc(sizeof(struct node));
+    s -> data=30;
+    
+    p -> next=q;
+    q -> next=r;
+    r -> next=s;
+    s -> next=NULL;
+
+    printf("The value of p=%d, address of p = %p\n", p -> data, p -> next);
+    printf("The value of q=%d, address of q = %p\n", q -> data, q -> next);
+    printf("The value of r=%d, address of r = %p\n", r -> data, r -> next);
+    printf("The value of s=%d, address of s = %p\n", s -> data, s -> next);
+
+
+}
